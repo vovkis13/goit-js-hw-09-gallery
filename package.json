@@ -1,0 +1,25 @@
+{
+  "name": "goit-js-hw-09-gallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vovkis13/goit-js-hw-09-gallery.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vovkis13/goit-js-hw-09-gallery/issues"
+  },
+  "homepage": "https://github.com/vovkis13/goit-js-hw-09-gallery#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "sass": "^1.40.1"
+  }
+}
