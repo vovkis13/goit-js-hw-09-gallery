@@ -1,6 +1,6 @@
 import galleryItems from "./data";
 import refs from "./refs";
-import renderGallery from "./render-gallery";
+import createItems from "./render-gallery";
 import openOriginalImage from "./open-modal";
 import closeOriginalImg from "./close-modal";
 import turnImage from "./turn-image";
@@ -8,8 +8,7 @@ const { lightboxRef, lightboxImgRef, lightboxBtnRef, overlayRef, galleryRef } =
   refs;
 let currentImg;
 
-renderGallery(galleryItems, galleryRef);
-
+galleryRef.insertAdjacentHTML("afterbegin", createItems(galleryItems));
 //Open original image
 galleryRef.addEventListener("click", (e) => {
   if (e.target.nodeName === "IMG")

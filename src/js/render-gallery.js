@@ -1,8 +1,8 @@
-export default function renderGallery(galleryItems, galleryRef) {
-  let listOfImagesText = '';
-  galleryItems.forEach(
-    ({ preview, original, description }) =>
-      (listOfImagesText += `
+export default function createItems(galleryItems) {
+  return galleryItems
+    .map((elem) => {
+      const { preview, original, description } = elem;
+      return `
   <li class="gallery__item">
     <a
       class="gallery__link"
@@ -16,7 +16,7 @@ export default function renderGallery(galleryItems, galleryRef) {
       />
     </a>
   </li>
-  `),
-  );
-  galleryRef.insertAdjacentHTML('afterbegin', listOfImagesText);
+  `;
+    })
+    .join("");
 }
