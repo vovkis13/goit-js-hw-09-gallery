@@ -1,9 +1,11 @@
-export default function turnImage(key, currentImg, lightboxImgRef) {
+export default function turnImage(key, curImg, ImgRef) {
   let sibling = false;
 
-  if (key === 'ArrowLeft') sibling = currentImg.parentNode.parentNode.previousElementSibling;
-  if (key === 'ArrowRight') sibling = currentImg.parentNode.parentNode.nextElementSibling;
-  if (sibling) currentImg = sibling.querySelector('img.gallery__image');
-  lightboxImgRef.setAttribute('src', currentImg.dataset.source);
-  return currentImg;
+  if (key === "ArrowLeft")
+    sibling = curImg.parentNode.parentNode.previousElementSibling;
+  if (key === "ArrowRight")
+    sibling = curImg.parentNode.parentNode.nextElementSibling;
+  if (sibling) curImg = sibling.querySelector("img.gallery__image");
+  ImgRef.setAttribute("src", curImg.dataset.source);
+  return curImg;
 }

@@ -1,6 +1,6 @@
-export default function openOriginalImage(e, lightboxImgRef, lightboxRef) {
+export default function openOriginalImage(e, ImgRef, modalRef) {
   e.preventDefault();
-  lightboxImgRef.setAttribute('src', e.target.dataset.source);
-  lightboxRef.classList.toggle('is-open');
+  ImgRef.setAttribute("src", e.target.dataset.source);
+  modalRef.classList.toggle("is-open");
   return e.target;
 }
