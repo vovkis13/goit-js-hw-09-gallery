@@ -3,12 +3,13 @@ import refs from "./refs";
 import createItems from "./render-gallery";
 import openOriginalImage from "./open-modal";
 import closeOriginalImg from "./close-modal";
-import turnImage from "./turn-image";
+import changeImage from "./turn-image";
 const { lightboxRef, lightboxImgRef, lightboxBtnRef, overlayRef, galleryRef } =
   refs;
 let currentImg;
 
 galleryRef.insertAdjacentHTML("afterbegin", createItems(galleryItems));
+
 //Open original image
 galleryRef.addEventListener("click", (e) => {
   if (e.target.nodeName === "IMG")
@@ -27,9 +28,7 @@ overlayRef.addEventListener("click", (e) =>
 
 window.addEventListener("keydown", (e) => {
   if (!lightboxRef.classList.contains("is-open")) return;
-  //Close original image on Escape keydown
-  if (e.key === "Escape") closeOriginalImg(lightboxImgRef, lightboxRef);
-  //Change image on Left-Right keydown
-  if (e.key === "ArrowLeft" || e.key === "ArrowRight")
-    currentImg = turnImage(e.key, currentImg, lightboxImgRef);
+  if (e.code === "Escape") closeOriginalImg(lightboxImgRef, lightboxRef);
+  if (e.code === "ArrowLeft" || e.code === "ArrowRight")
+    currentImg = changeImage(e.code, currentImg, lightboxImgRef);
 });
